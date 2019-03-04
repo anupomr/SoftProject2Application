@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SoftProject2Application</string>
+
+    <!-- Menu  -->
+    <string name="home">Home</string>
+    <string name="login"> Login</string>
+    <string name="logout"> Logout</string>
+    <string name="books">Books</string>
+    <string name="bookList">Books List</string>
+    <string name="exit">Exit</string>
 </resources>
