@@ -27,20 +27,19 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.login:
 
-                Toast.makeText(this, "You selected stop!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "You selected login!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.book:
 
-                Toast.makeText(this, "You selected help!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "You selected book!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.bookList:
                 Intent booksListIntent=new Intent(this,BooksListActivity.class);
-
                 startActivity(booksListIntent);
-                Toast.makeText(this, "You selected help!", Toast.LENGTH_LONG).show();
+
                 break;
             case R.id.exit:
-                Toast.makeText(this, "You selected help!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "You selected exit!", Toast.LENGTH_LONG).show();
                 System.exit(1);
                 break;
             default:
