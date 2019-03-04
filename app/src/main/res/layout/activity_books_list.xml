@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".BooksListActivity">
 
+
+    <ListView
+        android:id="@+id/lvMain"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        >
+
+    </ListView>
 </android.support.constraint.ConstraintLayout>
