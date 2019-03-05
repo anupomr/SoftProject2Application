@@ -8,6 +8,8 @@ import android.widget.EditText;
 public class LoginActivity extends AppCompatActivity {
     private EditText usernameEditText;
     private EditText passwordEditText;
+
+    private static final String CUSTOMER_USERNAME_PREFS = "customer_username_prefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

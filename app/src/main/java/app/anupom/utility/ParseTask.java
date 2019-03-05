@@ -1,4 +1,4 @@
-package utility;
+package app.anupom.utility;
 
 public class ParseTask {
 }
