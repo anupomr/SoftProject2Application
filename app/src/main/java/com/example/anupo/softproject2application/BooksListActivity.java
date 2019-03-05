@@ -28,9 +28,6 @@ public class BooksListActivity extends AppCompatActivity {
         new ParseTask().execute();
     }
 
-
-
-
     private class ParseTask extends AsyncTask<Void, Void, String> {
 
         HttpURLConnection urlConnection = null;
@@ -40,8 +37,7 @@ public class BooksListActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params) {
             try {
-                String $url_json = "https://api.myjson.com/bins/754j2";
-                //String $url_json = "http://bookapi-dev.us-east-1.elasticbeanstalk.com/api/Books.json";
+                String $url_json = "https://api.myjson.com/bins/pusue";
                 URL url = new URL($url_json);
 
                 urlConnection = (HttpURLConnection) url.openConnection();
@@ -80,12 +76,12 @@ public class BooksListActivity extends AppCompatActivity {
 
             try {
                 JSONObject json = new JSONObject(strJson);
-                JSONArray jArray = json.getJSONArray("booklist");
+                JSONArray jArray = json.getJSONArray("platform");
 
                 for (int i = 0; i < jArray.length(); i++) {
                     JSONObject friend = jArray.getJSONObject(i);
 
-                    String nameOS = friend.getString("title");
+                    String nameOS = friend.getString("name");
                     Log.d("FOR_LOG", nameOS);
 
                     hashmap = new HashMap<String, String>();
@@ -100,5 +96,4 @@ public class BooksListActivity extends AppCompatActivity {
             }
         }
     }
-
 }
