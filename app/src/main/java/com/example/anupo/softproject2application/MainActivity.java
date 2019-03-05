@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(this, "You selected start!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.login:
-
+                Intent loginIntent=new Intent(this,LoginActivity.class);
+                startActivity(loginIntent);
                 Toast.makeText(this, "You selected login!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.book:
