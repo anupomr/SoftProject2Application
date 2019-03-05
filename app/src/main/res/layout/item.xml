@@ -1,18 +1,23 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#FFF"
-    android:gravity="left">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+    <ImageView
+        android:id="@+id/bookLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/library_books"
+        android:layout_margin="10dp"/>
 
     <TextView
-        android:layout_height="25dp"
+        android:id="@+id/name_item"
         android:layout_width="wrap_content"
-        android:text="+15"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/bookLogo"
+        android:text="name"
         android:textColor="#000"
         android:textSize="19sp"
-        android:id="@+id/name_item"
-        android:textStyle="bold"
-        android:gravity="center"/>
+        android:textStyle="bold" />
 </LinearLayout>
