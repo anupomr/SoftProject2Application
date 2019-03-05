@@ -8,4 +8,7 @@
     <string name="books">Books</string>
     <string name="bookList">Books List</string>
     <string name="exit">Exit</string>
+
+    <!-- Login  -->
+    <string name="headerTextCustLogIn">Customer Login </string>
 </resources>

@@ -14,4 +14,21 @@
         <item name="android:paddingTop">15dp</item>
         <item name="android:paddingLeft">40dp</item>
     </style>
+
+
+    <style name="staffButtonStyle" parent="android:Widget.DeviceDefault.Button">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#800000</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fadingEdge">none|horizontal|vertical</item>
+    </style>
+    <style name="customerInfoStyle" parent="staffButtonStyle">
+        <item name="android:layout_width">105dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#800000</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
 </resources>
