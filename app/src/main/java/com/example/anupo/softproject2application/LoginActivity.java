@@ -1,5 +1,6 @@
 package com.example.anupo.softproject2application;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,5 +22,10 @@ public class LoginActivity extends AppCompatActivity {
     public void cancelBtn_OnClick(View view) {
         usernameEditText.setText("");
         passwordEditText.setText("");
+    }
+    // If not rregister, go to registration activity to register
+    public void NotRegistered_OnClick(View view) {
+        Intent intent = new Intent(this, RegistrationActivity.class);
+        startActivity(intent);
     }
 }
