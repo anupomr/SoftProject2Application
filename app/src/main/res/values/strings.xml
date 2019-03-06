@@ -11,4 +11,7 @@
 
     <!-- Login  -->
     <string name="headerTextCustLogIn">Customer Login </string>
+
+    <!-- Registration  -->
+    <string name="headerTextRegistration">Register Your Details</string>
 </resources>
