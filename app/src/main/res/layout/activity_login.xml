@@ -66,7 +66,7 @@
             style="@style/customerInfoStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:onClick="loginBtn_OnClick"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:text="Sign-in"
