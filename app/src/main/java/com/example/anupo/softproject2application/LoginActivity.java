@@ -46,6 +46,16 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this,BooksListActivity.class);
             intent.putExtra("username",Integer.parseInt(_username));
             startActivity(intent);
+
+            // for SharedPreferences response
+            SharedPreferences myPreference =
+                    getSharedPreferences("MyUser", 0);
+            //prepare it for edit by creating and Edit object
+            SharedPreferences.Editor prefEditor = myPreference.edit();
+            //store a string in memory
+            prefEditor.putString("UserName", _username);
+            //commit the transaction
+            prefEditor.commit();
         }
         else
         {
