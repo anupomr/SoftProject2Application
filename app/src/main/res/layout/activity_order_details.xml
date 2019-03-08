@@ -5,5 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OrderDetailsActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/showBookarea"
+            android:padding="5dp"
+            android:textSize="24sp"
+            android:hint="Fetched Books Heare"
+
+            />
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
