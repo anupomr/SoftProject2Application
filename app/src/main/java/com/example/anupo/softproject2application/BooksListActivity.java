@@ -1,9 +1,14 @@
 package com.example.anupo.softproject2application;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -26,6 +31,31 @@ public class BooksListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books_list);
         new ParseTask().execute();
+
+        //List view Code
+        ListView listView=(ListView)findViewById(R.id.lvMain);
+       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+               Intent orderDetailsIntent=new Intent(BooksListActivity.this, OrderDetailsActivity.class);
+               SharedPreferences sharedPref=getSharedPreferences("BooksDetails", Context.MODE_PRIVATE);
+               SharedPreferences.Editor editor=sharedPref.edit();
+               switch (i){
+                   case 0:
+                       editor.putString("Book","J2EE");
+                       orderDetailsIntent.putExtra("name","J2EE");
+                       break;
+                   case 1:
+                       editor.putString("Book","Linux");
+                       orderDetailsIntent.putExtra("name","Linux");
+                       break;
+                   case 2:
+                       editor.putString("Book","Linux");
+                       orderDetailsIntent.putExtra("name","Linux");
+                       break;
+               }
+           }
+       });
     }
 
     private class ParseTask extends AsyncTask<Void, Void, String> {
@@ -96,4 +126,6 @@ public class BooksListActivity extends AppCompatActivity {
             }
         }
     }
+
+
 }
