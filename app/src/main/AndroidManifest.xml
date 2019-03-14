@@ -21,7 +21,8 @@
         <activity android:name=".BooksListActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".OrderDetailsActivity"></activity>
+        <activity android:name=".OrderDetailsActivity" />
+        <activity android:name=".BooksActivity"></activity>
     </application>
 
 </manifest>
