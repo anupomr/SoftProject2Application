@@ -1,6 +1,9 @@
 package app.anupom.utility;
 
+import android.content.Context;
 import android.os.AsyncTask;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.anupo.softproject2application.BooksActivity;
@@ -60,6 +63,7 @@ public class BackgroundWorker extends AsyncTask<Void,Void,Void> {
     protected void onPostExecute(Void aVoid) {
         Log.d("shila","start on post exe");
         BooksActivity.lstBook=this.lstBook;
+
         super.onPostExecute(aVoid);
     }
 

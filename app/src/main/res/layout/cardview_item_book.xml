@@ -10,13 +10,15 @@
     android:orientation="vertical"
     android:layout_margin="5dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
     <ImageView
         android:id="@+id/book_img_id"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:scaleType="centerCrop"
-        android:background="#2d2d2d"/>
+        android:background="#2d2d2d"
+        android:onClick="Book_OnClick"/>
     <TextView
         android:id="@+id/book_title_id"
         android:text="Book Title"

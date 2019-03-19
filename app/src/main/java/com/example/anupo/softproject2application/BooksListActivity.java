@@ -68,7 +68,7 @@ public class BooksListActivity extends AppCompatActivity {
         protected String doInBackground(Void... params) {
             try {
                 String $url_json = "https://api.myjson.com/bins/lbwna";
-                URL url = new URL("http://bookapi-dev.us-east-1.elasticbeanstalk.com/api/Books.json");
+                URL url = new URL($url_json);
 
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");

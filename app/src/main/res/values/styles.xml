@@ -11,8 +11,7 @@
         <item name="android:textColor">#f44404</item>
         <item name="android:textSize">9pt</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:paddingTop">15dp</item>
-        <item name="android:paddingLeft">40dp</item>
+
     </style>
 
 

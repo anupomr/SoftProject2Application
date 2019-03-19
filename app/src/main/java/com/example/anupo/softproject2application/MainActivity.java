@@ -6,14 +6,25 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        loginButton= findViewById(R.id.buttonLogin);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loginIntent=new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(loginIntent);
+            }
+        });
     }
 
     @Override
@@ -26,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(this, "You selected start!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.login:
-                Intent loginIntent=new Intent(this,LoginActivity.class);
+                Intent loginIntent=new Intent(MainActivity.this,LoginActivity.class);
                 startActivity(loginIntent);
                 Toast.makeText(this, "You selected login!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.book:
                 Intent books=new Intent(this,BooksActivity.class);
                 startActivity(books);
-                Toast.makeText(this, "You selected book!", Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "You selected book!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.bookList:
                 Intent booksListIntent=new Intent(this,BooksListActivity.class);
