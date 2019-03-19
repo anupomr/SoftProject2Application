@@ -9,7 +9,7 @@
     </style>
     <style name="headingOne">
         <item name="android:textColor">#f44404</item>
-        <item name="android:textSize">9pt</item>
+        <item name="android:textSize">10pt</item>
         <item name="android:textStyle">bold</item>
 
     </style>

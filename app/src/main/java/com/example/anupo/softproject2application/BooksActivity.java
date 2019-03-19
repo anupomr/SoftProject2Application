@@ -58,7 +58,7 @@ public class BooksActivity extends AppCompatActivity {
 
     public void Book_OnClick(View view) {
         Intent intent = new Intent(this, OrderDetailsActivity.class);
-        OrderDetailsActivity.textView.setText("Anupom");
+        //OrderDetailsActivity.textView.setText("Anupom");
         startActivity(intent);
     }
 }

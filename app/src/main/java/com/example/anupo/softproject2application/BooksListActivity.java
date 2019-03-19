@@ -44,14 +44,17 @@ public class BooksListActivity extends AppCompatActivity {
                    case 0:
                        editor.putString("Book","J2EE");
                        orderDetailsIntent.putExtra("name","J2EE");
+                       startActivity(orderDetailsIntent);
                        break;
                    case 1:
                        editor.putString("Book","Linux");
                        orderDetailsIntent.putExtra("name","Linux");
+                       startActivity(orderDetailsIntent);
                        break;
                    case 2:
                        editor.putString("Book","Linux");
                        orderDetailsIntent.putExtra("name","Linux");
+                       startActivity(orderDetailsIntent);
                        break;
                }
            }
