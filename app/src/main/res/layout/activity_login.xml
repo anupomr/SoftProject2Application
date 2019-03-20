@@ -35,7 +35,7 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="User Name"
-        android:inputType="number" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/passwordTxt"

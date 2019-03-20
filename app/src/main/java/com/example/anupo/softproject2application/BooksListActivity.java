@@ -29,6 +29,7 @@ public class BooksListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String userNmae=getIntent().getStringExtra("name");
         setContentView(R.layout.activity_books_list);
         new ParseTask().execute();
 

@@ -12,8 +12,8 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
     private EditText usernameEditText;
     private EditText passwordEditText;
-
     private static final String CUSTOMER_USERNAME_PREFS = "customer_username_prefs";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         }
         return false;
     }
+
+
     public void loginBtn_OnClick(View view) {
         String _username = usernameEditText.getText().toString();
         String _password = passwordEditText.getText().toString();
@@ -44,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             //view customer activity
             Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this,BooksListActivity.class);
-            intent.putExtra("username",Integer.parseInt(_username));
+            intent.putExtra("username",_username);
             startActivity(intent);
 
             // for SharedPreferences response

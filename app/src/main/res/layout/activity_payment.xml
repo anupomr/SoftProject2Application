@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/customerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/headingOne"
+        android:text="@string/customerTxtVew"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:inputType="textCapWords|textPersonName" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/address" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtAddress"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/address"
+                android:inputType="textCapWords" />
+
+            <EditText
+                android:id="@+id/txtZip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/zip"
+                android:maxLength="6"
+                android:inputType="textCapCharacters" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/creditCardNumber" />
+
+        <EditText
+            android:id="@+id/txtCardNo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/creditCardNumber"
+            android:inputType="number"
+            android:maxLength="12"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/expDate"/>
+
+        <EditText
+            android:id="@+id/txtExpireDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/expDateFormat"
+            android:maxLength="4"
+            android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/phoneNo"/>
+
+        <EditText
+            android:id="@+id/txtPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/phoneNoFormat"
+            android:inputType="number|phone" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Place an Order" />
+
+
+</LinearLayout>

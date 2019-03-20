@@ -14,4 +14,18 @@
 
     <!-- Registration  -->
     <string name="headerTextRegistration">Register Your Details</string>
+
+
+    <!--String for Customer Activity-->
+    <string name="customerTxtVew">Please Complete the info </string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="zip">M1M3M6</string>
+    <string name="creditCardNumber">Credit Card Number</string>
+    <string name="expDate">Expire Date</string>
+    <string name="expDateFormat">MMYY</string>
+    <string name="phoneNo">Phone Number</string>
+    <string name="phoneNoFormat">6472142145</string>
+    <string name="userName">User Name</string>
+    <string name="password">Password</string>
 </resources>

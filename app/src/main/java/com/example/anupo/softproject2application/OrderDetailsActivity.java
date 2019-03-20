@@ -61,9 +61,13 @@ public class OrderDetailsActivity extends AppCompatActivity {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                     if (jsonObject.getString("title").equals(myString)) {
-                        singleParsed = "Book Name: " + jsonObject.getString("title") + "\n" +
-                                "Price    : " + jsonObject.getString("price") + "\n" +
-                                "Edition  : " + jsonObject.getString("edition") + "\n";
+                        singleParsed =
+                                "Book Name  : " + jsonObject.getString("title") + "\n" +
+                                "Price      : " + jsonObject.getString("price") + "\n" +
+                                "Edition    : " + jsonObject.getString("edition") + "\n"+
+                                "Description: " + jsonObject.getString("description") + "\n"+
+                                "ISBN       : " + jsonObject.getString("isbn") + "\n"+
+                                "Publisher  : "+ jsonObject.getString("publisher") + "\n";
 
                         dataParsed = dataParsed + singleParsed + "\n\n";
                     }
