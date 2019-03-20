@@ -23,7 +23,8 @@
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".OrderDetailsActivity" />
         <activity android:name=".BooksActivity" />
-        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".ConfirmationActivity"></activity>
     </application>
 
 </manifest>
