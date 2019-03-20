@@ -1,9 +1,12 @@
 package com.example.anupo.softproject2application;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -22,7 +25,7 @@ import java.net.URL;
 public class OrderDetailsActivity extends AppCompatActivity {
     public static TextView data;
     public static String data1;
-
+ Button checkout;
     String myString;
 
     @Override
@@ -30,12 +33,21 @@ public class OrderDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details);
         data = findViewById(R.id.showBookarea);
+        checkout= findViewById(R.id.buttonCheckout);
         //retrieving from shared preferences
 //        SharedPreferences myPref = getSharedPreferences("MyUser", MODE_PRIVATE);
 //         myString = myPref.getString("UserName","");
         myString="Java Standerd";
         ParseBook pb = new ParseBook();
         pb.execute();
+
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent checkoutIntent=new Intent(OrderDetailsActivity.this, PaymentActivity.class);
+                startActivity(checkoutIntent);
+            }
+        });
     }
 
 
@@ -91,5 +103,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
         }
     }
+
+
 
 }

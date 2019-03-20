@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OrderDetailsActivity">
-    <ScrollView
+
+    <TextView
+        android:id="@+id/showCustomerInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+        android:hint="Your Order Details"
+        android:padding="5dp"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/showBookarea"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/showBookarea"
-            android:padding="5dp"
-            android:textSize="24sp"
-            android:hint="Fetched Books Heare"
+        android:layout_height="281dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="107dp"
 
-            />
+        android:hint="Fetched Books Heare"
+        android:padding="5dp"
+        android:textSize="24sp" />
 
-    </ScrollView>
+    <Button
+        android:id="@+id/buttonCheckout"
+        style="@style/customerInfoStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="101dp"
+        android:text="Checkout"
+        android:textColorLink="@android:color/darker_gray" />
 
-</android.support.constraint.ConstraintLayout>
+
+
+</RelativeLayout>

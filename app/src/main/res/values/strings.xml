@@ -26,6 +26,5 @@
     <string name="expDateFormat">MMYY</string>
     <string name="phoneNo">Phone Number</string>
     <string name="phoneNoFormat">6472142145</string>
-    <string name="userName">User Name</string>
-    <string name="password">Password</string>
+
 </resources>
