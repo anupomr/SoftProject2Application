@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
     tools:context=".ConfirmationActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        style="@style/headingOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Congratulation!!! You Order is ready " />
+
+    <TextView
+        style="@style/orderDetails"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="Message" />
+
+    <TextView
+        style="@style/orderDetails"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Your order will delivered within 10 Days" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        style="@style/customerInfoStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="85dp"
+        android:text="Exit"
+        android:textColorLink="@android:color/darker_gray" />
+
+
+
+</RelativeLayout>

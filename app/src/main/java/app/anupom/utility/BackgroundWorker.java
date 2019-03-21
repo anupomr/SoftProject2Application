@@ -49,7 +49,13 @@ public class BackgroundWorker extends AsyncTask<Void,Void,Void> {
                 JSONObject jsonObject= (JSONObject) jsonArray.get(i);
                 Book b=new Book(jsonObject.getString("bookId"),jsonObject.getString("title"),jsonObject.getString("description"),Float.parseFloat( jsonObject.getString("price")), R.drawable.library_books);
                 lstBook.add(b);
+//
             }
+            lstBook.get(1).thumbnail=R.drawable.b2;
+               lstBook.get(2).thumbnail=R.drawable.b3;
+                lstBook.get(3).thumbnail=R.drawable.b4;
+                lstBook.get(4).thumbnail=R.drawable.b5;
+            lstBook.get(5).thumbnail=R.drawable.b1;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
