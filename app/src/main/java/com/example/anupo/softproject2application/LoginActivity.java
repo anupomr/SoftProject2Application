@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
 
             //view customer activity
             Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,BooksListActivity.class);
+            Intent intent = new Intent(this,BooksActivity.class);
             intent.putExtra("username",_username);
             startActivity(intent);
 
