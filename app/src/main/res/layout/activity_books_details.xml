@@ -75,4 +75,14 @@
                 android:layout_marginTop="10dp"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+    <Button
+        android:id="@+id/btCheckout"
+        style="@style/customerInfoStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="101dp"
+        android:text="Checkout"
+        android:textColorLink="@android:color/darker_gray" />
 </LinearLayout>
