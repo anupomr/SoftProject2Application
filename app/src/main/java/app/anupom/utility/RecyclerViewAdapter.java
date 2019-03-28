@@ -1,5 +1,10 @@
 package app.anupom.utility;
-
+/*
+ * Purpose: this utility helps to show data in card view
+ * Author:   Shila Das
+ * Date: March 16, 2019
+ * Version: 1.7
+ * */
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;

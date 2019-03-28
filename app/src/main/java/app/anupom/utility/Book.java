@@ -1,5 +1,10 @@
 package app.anupom.utility;
-
+/*
+ * Purpose: this is a model class
+ * Author:  Shila Das
+ * Date: March 16, 2019
+ * Version: 1.7
+ * */
 public class Book {
     public  String bookId;
     public  String title;
