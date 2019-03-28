@@ -5,7 +5,6 @@ package com.example.anupo.softproject2application;
  * Date: February 18, 2019
  * Version: 1.7
  * */
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,14 +13,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import app.anupom.utility.BackgroundWorker;
-import app.anupom.utility.Book;
-import app.anupom.utility.RecyclerViewAdapter;
+import app.sebobooks.utility.BackgroundWorker;
+import app.sebobooks.utility.Book;
+import app.sebobooks.utility.RecyclerViewAdapter;
 
 public class BooksActivity extends AppCompatActivity {
     public static List<Book> lstBook;

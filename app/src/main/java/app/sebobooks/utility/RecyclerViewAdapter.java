@@ -1,4 +1,4 @@
-package app.anupom.utility;
+package app.sebobooks.utility;
 /*
  * Purpose: this utility helps to show data in card view
  * Author:   Shila Das
@@ -7,7 +7,6 @@ package app.anupom.utility;
  * */
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

@@ -1,14 +1,11 @@
-package app.anupom.utility;
+package app.sebobooks.utility;
 /*
  * Purpose: this utility helps for fatch API data
  * Author:  Anupom Roy, Shila Das
  * Date: March 16, 2019
  * Version: 1.7
  * */
-import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.anupo.softproject2application.BooksActivity;

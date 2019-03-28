@@ -1,4 +1,4 @@
-package app.anupom.utility;
+package app.sebobooks.utility;
 /*
  * Purpose: this is a model class
  * Author:  Shila Das
