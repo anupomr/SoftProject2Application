@@ -1,5 +1,10 @@
 package com.example.anupo.softproject2application;
-
+/*
+ *Purpose: Show all Books
+ * Author:  Shila Das
+ * Date: February 18, 2019
+ * Version: 1.7
+ * */
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

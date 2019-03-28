@@ -1,5 +1,10 @@
 package com.example.anupo.softproject2application;
-
+/*
+ * Purpose: This is a Landing page
+ * Author:  Anupom Roy
+ * Date: Feburary 2, 2019
+ * Version: 1.7
+ * */
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

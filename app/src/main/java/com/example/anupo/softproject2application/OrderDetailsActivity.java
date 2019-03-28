@@ -1,5 +1,10 @@
 package com.example.anupo.softproject2application;
-
+/*
+ * Purpose: To show the details information of the Order
+ * Author:  Anupom Roy
+ * Date: March 16, 2019
+ * Version: 1.7
+ * */
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;

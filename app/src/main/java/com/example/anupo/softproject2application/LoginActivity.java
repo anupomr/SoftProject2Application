@@ -1,5 +1,10 @@
 package com.example.anupo.softproject2application;
-
+/*
+ * Purpose: This page for Login
+ * Author:  Anupom Roy
+ * Date: Feburary 20, 2019
+ * Version: 1.7
+ * */
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;

@@ -1,5 +1,10 @@
 package com.example.anupo.softproject2application;
-
+/*
+ * Purpose: to vew data as list view
+ * Author:  Anupom Roy
+ * Date: March 2, 2019
+ * Version: 1.7
+ * */
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
