@@ -65,7 +65,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         String data = "";
         String dataParsed = "";
         String singleParsed = "";
-
+//
         @Override
         protected Void doInBackground(Void... params) {
             try {
