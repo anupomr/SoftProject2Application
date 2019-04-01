@@ -1,18 +1,25 @@
 package app.sebobooks.utility;
-
+/*
+ * Purpose: Define All API Calls
+ * Author:  Anupom Roy
+ * Date: April 1, 2019
+ * Version: 1.0
+ * */
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
-// Define All API Calls
+
 public interface Api {
 
+    @FormUrlEncoded
     @POST("client")
     Call<ResponseBody> createUser(
-            @Field("email") String email,
-            @Field("password") String password,
-            @Field("name") String name,
-            @Field("school") String school
+            @Field("clientcode") String email,
+            @Field("fname") String password,
+            @Field("lname") String name
+
     );
 }
