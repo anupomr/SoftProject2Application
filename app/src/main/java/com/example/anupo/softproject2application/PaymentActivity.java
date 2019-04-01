@@ -13,23 +13,71 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import app.sebobooks.utility.RetrofitClient;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
 
 public class PaymentActivity extends AppCompatActivity {
 Button confitmButton;
+EditText clientcode,fname,lname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
         confitmButton=findViewById(R.id.buttonConfirm);
+        clientcode=findViewById(R.id.txtCardNo);
+        fname=findViewById(R.id.txtAddress);
+        lname=findViewById(R.id.txtName);
+
         confitmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String txtCardNo = clientcode.getText().toString().trim();
+                String txtAddress = fname.getText().toString().trim();
+                String txtName = lname.getText().toString().trim();
+
+                // Validating text field
+                if (txtCardNo.isEmpty()) {
+                    clientcode.setError("Name required");
+                    clientcode.requestFocus();
+                    return;
+                }
+
+                if (txtAddress.isEmpty()) {
+                    fname.setError("Name required");
+                    fname.requestFocus();
+                    return;
+                }
+                if (txtName.isEmpty()) {
+                    lname.setError("Name required");
+                    lname.requestFocus();
+                    return;
+                }
+
+                Call<ResponseBody> call = RetrofitClient
+                        .getInstance()
+                        .getApi()
+                        .createUser(txtCardNo, txtAddress, txtName);
+
+
                 Intent confitmIntent=new Intent(PaymentActivity.this,ConfirmationActivity.class);
                 startActivity(confitmIntent);
             }
         });
     }
+
+
+
+
+
+
+
+
+    //Create Menu if the user change his/her mind not to procceed
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection

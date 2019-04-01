@@ -17,9 +17,9 @@ public interface Api {
     @FormUrlEncoded
     @POST("client")
     Call<ResponseBody> createUser(
-            @Field("clientcode") String email,
-            @Field("fname") String password,
-            @Field("lname") String name
+            @Field("clientcode") String clientcode,
+            @Field("fname") String fname,
+            @Field("lname") String lname
 
     );
 }
