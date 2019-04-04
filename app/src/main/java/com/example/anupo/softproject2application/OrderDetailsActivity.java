@@ -43,9 +43,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order_details);
         data = findViewById(R.id.showBookarea);
         checkout= findViewById(R.id.buttonCheckout);
-        //retrieving from shared preferences
-//        SharedPreferences myPref = getSharedPreferences("MyUser", MODE_PRIVATE);
-//         myString = myPref.getString("UserName","");
+
         myString="Java Standerd";
         ParseBook pb = new ParseBook();
         pb.execute();
@@ -121,7 +119,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
             case R.id.home:
                 Intent homeIntent=new Intent(this,MainActivity.class);
                 startActivity(homeIntent);
-                //Toast.makeText(this, "You selected start!", Toast.LENGTH_LONG).show();
+
                 break;
             case R.id.login:
                 Intent loginIntent=new Intent(this,LoginActivity.class);
@@ -131,7 +129,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
             case R.id.book:
                 Intent books=new Intent(this,BooksActivity.class);
                 startActivity(books);
-                //Toast.makeText(this, "You selected book!", Toast.LENGTH_LONG).show();
+
                 break;
             case R.id.bookList:
                 Intent booksListIntent=new Intent(this,BooksListActivity.class);

@@ -5,6 +5,8 @@ package com.example.anupo.softproject2application;
  * Date: April 3, 2019
  * Version: 2.1
  * */
+import android.app.Activity;
+import android.app.Instrumentation;
 import android.support.test.rule.ActivityTestRule;
 
 import org.junit.After;
@@ -12,6 +14,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -24,7 +27,7 @@ public class LoginActivityTest {
 
     private LoginActivity loginActivity=null;
 
-
+    Instrumentation.ActivityMonitor monitor=getInstrumentation().addMonitor(BooksActivity.class.getName(),null,false);
 
     @Before
     public void setUp() throws Exception {
@@ -33,7 +36,14 @@ public class LoginActivityTest {
     @Test
     public void testLunchOfBooksActivity(){
         assertNotNull(loginActivity.findViewById(R.id.buttonLoginCustomer));
+
         onView(withId(R.id.buttonLoginCustomer)).perform(click());
+
+        Activity booksActivity=getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
+
+        assertNotNull(booksActivity);
+
+        booksActivity.finish();
     }
 
     @After

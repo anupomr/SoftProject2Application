@@ -24,21 +24,18 @@ import app.sebobooks.utility.RecyclerViewAdapter;
 public class BooksActivity extends AppCompatActivity {
     public static List<Book> lstBook;
     RecyclerView myrv;
-
-//    public static Context context;
     Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
-//        BackgroundWorker bw=new BackgroundWorker();
-//        bw.execute();
 
         myrv=(RecyclerView) findViewById(R.id.recyclerview_id);
 
         lstBook=new ArrayList<>();
         btn=findViewById(R.id.btn);
-//        myrv=(RecyclerView) findViewById(R.id.recyclerview_id);
+
 
 
         btn.setOnClickListener(new View.OnClickListener(){
@@ -55,13 +52,10 @@ public class BooksActivity extends AppCompatActivity {
             }
         });
 
-        //
-        //myrv.setOnClickListener(new RecyclerViewAdapter());
     }
 
     public void Book_OnClick(View view) {
         Intent intent = new Intent(this, OrderDetailsActivity.class);
-        //OrderDetailsActivity.textView.setText("Anupom");
         startActivity(intent);
     }
 }

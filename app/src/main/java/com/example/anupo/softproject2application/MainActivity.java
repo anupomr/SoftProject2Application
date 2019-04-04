@@ -39,7 +39,6 @@ Button loginButton;
             case R.id.home:
                 Intent homeIntent=new Intent(this,MainActivity.class);
                 startActivity(homeIntent);
-                //Toast.makeText(this, "You selected start!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.login:
                 Intent loginIntent=new Intent(MainActivity.this,LoginActivity.class);
@@ -49,7 +48,6 @@ Button loginButton;
             case R.id.book:
                 Intent books=new Intent(this,BooksActivity.class);
                 startActivity(books);
-                //Toast.makeText(this, "You selected book!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.bookList:
                 Intent booksListIntent=new Intent(this,BooksListActivity.class);
