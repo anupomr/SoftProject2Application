@@ -25,7 +25,8 @@
         <activity android:name=".BooksActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".ConfirmationActivity" />
-        <activity android:name=".BooksDetailsActivity"></activity>
+        <activity android:name=".BooksDetailsActivity" />
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>

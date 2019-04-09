@@ -1,18 +1,13 @@
 package com.example.anupo.softproject2application;
-/*
- * Purpose: This page for Registration
- * Author:  Anupom Roy
- * Date: Feburary 20, 2019
- * Version: 1.7
- * */
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -29,24 +24,31 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class RegistrationActivity extends AppCompatActivity {
-String res="";
-   EditText emailET, pwdET, phET;
+public class ProfileActivity extends AppCompatActivity {
+
+    EditText fnET,lnET, ccET;
+    String email,ph;
+   // TextView phTV, emailTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
-        emailET=(EditText)findViewById(R.id.emailET);
-        pwdET=(EditText)findViewById(R.id.passwordET);
-        phET=(EditText)findViewById(R.id.phET);
-
-
+        setContentView(R.layout.activity_profile);
+        fnET=(EditText)findViewById(R.id.fnET);
+        lnET=(EditText)findViewById(R.id.lnET);
+        ccET=(EditText)findViewById(R.id.ccET);
+       // emailTV=(TextView) findViewById(R.id.emailTV);
+        //phTV=(TextView) findViewById(R.id.phTV);
+        //emailTV.setText(getIntent().getStringExtra("email"));
+        email=getIntent().getStringExtra("email");
+        Log.d("email",email);
+        //phTV.setText(getIntent().getStringExtra("ph"));
+        ph=getIntent().getStringExtra("ph");
+        Log.d("shila2",email);
     }
     public void onSend(View view) {
-        if(!emailET.getText().toString().isEmpty() && !phET.getText().toString().isEmpty() && !pwdET.getText().toString().isEmpty())
-            new RegistrationActivity.HTTPAsyncTask().execute("http://bookapi-dev.us-east-1.elasticbeanstalk.com/api/UserWithRoles/RegisterUser");
-        else
-            Toast.makeText(getApplicationContext(),"Please enter all values",Toast.LENGTH_LONG).show();
+
+        if(!fnET.getText().toString().isEmpty() && !lnET.getText().toString().isEmpty() && !ccET.getText().toString().isEmpty())
+            new ProfileActivity.HTTPAsyncTask().execute("http://bookapi-dev.us-east-1.elasticbeanstalk.com/api/Users/UpdateProfile");
     }
     private class HTTPAsyncTask extends AsyncTask<String, Void, String> {
         @Override
@@ -66,22 +68,19 @@ String res="";
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-           // Log.d("shila",emailET.getText().toString());
+            Log.d("shila1",result);
             try {
                 JSONObject jo = new JSONObject(result);
-               // Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();
                 if(jo.getString("statusCode").equals("201")) {
-                    Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
-                    intent.putExtra("email",emailET.getText().toString());
-                    //intent.putExtra("pwd",pwdET.getText().toString());
-                    intent.putExtra("ph",phET.getText().toString());
+                    Intent intent = new Intent(getApplicationContext(),BooksActivity.class);
                     startActivity(intent);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-           // res=result;
+            Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
+
             //res.setText(result);
             // return result;
         }
@@ -118,15 +117,26 @@ String res="";
             return JsonResult;//conn.getResponseMessage()+"";
 
         }
+
         private JSONObject buidJsonObject() throws JSONException {
 
             JSONObject jsonObject = new JSONObject();
-
-
-            jsonObject.accumulate("uEmail", emailET.getText());
-            jsonObject.accumulate("password", pwdET.getText());
-            jsonObject.accumulate("uPhoneNumber", phET.getText());
-
+            Log.d("email",email);
+            //jsonObject.accumulate("userId", "0");
+            jsonObject.accumulate("userName",email);
+            jsonObject.accumulate("firstName", fnET.getText());
+            //jsonObject.accumulate("middleName", "");
+            jsonObject.accumulate("lastName", lnET.getText());
+            jsonObject.accumulate("userType", "1");
+            //jsonObject.accumulate("Address", "");
+            jsonObject.accumulate("age", "35");
+            jsonObject.accumulate("email", email); //this email should be login user email, any user can update only self profile
+            jsonObject.accumulate("phone", ph); //this email should be login user email, any user can update only self profile
+            jsonObject.accumulate("creditcard", ccET.getText());
+            jsonObject.accumulate("creditcardName", fnET.getText()+" "+lnET.getText());
+            jsonObject.accumulate("localizationId", "1"); //this is from dropdown
+            jsonObject.accumulate("institutionBranchId", "1");//this is from dropdown . this dropdown list is depended on anoother dropdownlist Institution
+            jsonObject.accumulate("isBlocked", "false"); //always put false
             return jsonObject;
         }
         private void setPostRequestContent(HttpURLConnection conn,
@@ -141,6 +151,4 @@ String res="";
             os.close();
         }
     }
-
-
 }

@@ -69,20 +69,20 @@ public class LoginActivity extends AppCompatActivity {
         if(validate(_username,_password))
         {
             new HTTPAsyncTask().execute("http://bookapi-dev.us-east-1.elasticbeanstalk.com/api/UserWithRoles/login");
-            Toast.makeText(this
-            , res, Toast.LENGTH_LONG).show();
+           // Toast.makeText(this
+            //, res, Toast.LENGTH_LONG).show();
           //  JSONArray jsonArray = null;
 
-            try {
+           // try {
                // jsonArray = new JSONArray(res);
-                Log.d("sebo","test");
+             //   Log.d("sebo","test");
           //  for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject = new JSONObject(res);
+              //  JSONObject jsonObject = new JSONObject(res);
 
-                Log.d("shila1",String.valueOf(jsonObject.length()));
+            //    Log.d("shila1",String.valueOf(jsonObject.length()));
               //  Log.d("shila3",String.valueOf(jsonObject));
-                Log.d("shila2",String.valueOf(jsonObject.names()));
-                Toast.makeText(getApplicationContext(),String.valueOf(jsonObject.names()), Toast.LENGTH_LONG).show();
+            //    Log.d("shila2",String.valueOf(jsonObject.names()));
+             //   Toast.makeText(getApplicationContext(),String.valueOf(jsonObject.names()), Toast.LENGTH_LONG).show();
               //  Toast.makeText(getApplicationContext(),jsonObject.getString("uEmail"), Toast.LENGTH_LONG).show();
 //                if (jsonObject.getString("title").equals(myString)) {
 //                    singleParsed =
@@ -96,29 +96,10 @@ public class LoginActivity extends AppCompatActivity {
 //                    dataParsed = dataParsed + singleParsed + "\n\n";
 //                }
             //}
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            SharedPreferences.Editor editor =
-                    getSharedPreferences(CUSTOMER_USERNAME_PREFS, MODE_PRIVATE).edit();
-            editor.putString("username_key",_username);
-            editor.apply();
+            //} catch (JSONException e) {
+              //  e.printStackTrace();
+            //}
 
-            //view customer activity
-           // Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,BooksActivity.class);
-            intent.putExtra("username",_username);
-            startActivity(intent);
-
-            // for SharedPreferences response
-            SharedPreferences myPreference =
-                    getSharedPreferences("MyUser", 0);
-            //prepare it for edit by creating and Edit object
-            SharedPreferences.Editor prefEditor = myPreference.edit();
-            //store a string in memory
-            prefEditor.putString("UserName", _username);
-            //commit the transaction
-            prefEditor.commit();
         }
         else
         {
@@ -201,9 +182,48 @@ public class LoginActivity extends AppCompatActivity {
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-            Log.d("shila",result);
+           // Log.d("resStr",result);
+            //usernameEditText.setText(result);
+           try {
+                JSONObject jo = new JSONObject(result);
+                Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();
+
+                if(jo.getString("message").equals("profile found"))
+                {
+                    JSONObject jprofile=new JSONObject(jo.getString("profile"));
+                    Log.d("readData",jprofile.getString("uFirstName"));//way of reading any tag inside profile from response
+                  //  Intent intent = new Intent(getApplicationContext(),BooksActivity.class);
+                    //intent.putExtra("username",usernameEditText.getText().toString());
+                    //startActivity(intent);
+                    SharedPreferences.Editor editor =
+                            getSharedPreferences(CUSTOMER_USERNAME_PREFS, MODE_PRIVATE).edit();
+                    editor.putString("username_key",usernameEditText.getText().toString());
+                    editor.apply();
+
+                    //view customer activity
+                    // Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),BooksActivity.class);
+                    intent.putExtra("username",usernameEditText.getText().toString());
+                    startActivity(intent);
+
+                    // for SharedPreferences response
+                    SharedPreferences myPreference =
+                            getSharedPreferences("MyUser", 0);
+                    //prepare it for edit by creating and Edit object
+                    SharedPreferences.Editor prefEditor = myPreference.edit();
+                    //store a string in memory
+                    prefEditor.putString("UserName", usernameEditText.getText().toString());
+                    //commit the transaction
+                    prefEditor.commit();
+                }
+                else
+                    Toast.makeText(getApplicationContext(),jo.getString("message"),Toast.LENGTH_LONG).show();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            //Log.d("shila",result);
             //Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-            res=result;
+           // res=result;
             //res.setText(result);
            // return result;
         }
@@ -232,7 +252,7 @@ public class LoginActivity extends AppCompatActivity {
             String inputLine = "";
             while ((inputLine = br.readLine()) != null) {
                 //sb=inputLine;
-                //sb.append(inputLine);
+                sb.append(inputLine);
             }
             JsonResult = sb.toString();
 
@@ -247,8 +267,8 @@ public class LoginActivity extends AppCompatActivity {
             //jsonObject.accumulate("condition", txt.getText());
             //for inserting book condition--end
             //for login--begin
-                jsonObject.accumulate("email", "anu@anu.com");
-              jsonObject.accumulate("password", "Cen@123");
+                jsonObject.accumulate("email", usernameEditText.getText());
+              jsonObject.accumulate("password", passwordEditText.getText());
             //for login--end
             //for register--begin
             //   jsonObject.accumulate("email", "a@anu.com");

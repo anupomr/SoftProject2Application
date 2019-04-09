@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.widget.RecyclerView;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,8 @@ import app.sebobooks.utility.RecyclerViewAdapter;
 public class BooksActivity extends AppCompatActivity {
     public static List<Book> lstBook;
     RecyclerView myrv;
-    Button btn;
+    EditText searchTxt;
+    Button btnShowBooks, btnSearchBook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,22 @@ public class BooksActivity extends AppCompatActivity {
         myrv=(RecyclerView) findViewById(R.id.recyclerview_id);
 
         lstBook=new ArrayList<>();
-        btn=findViewById(R.id.btn);
+        searchTxt=findViewById(R.id.searchTxt);
+        btnSearchBook=findViewById(R.id.searchBtn);
+        btnShowBooks=findViewById(R.id.btn);
 
+        //Search button handeller
+        btnSearchBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent searchIntent=new Intent(BooksActivity.this, OrderDetailsActivity.class);
+                searchIntent.putExtra("search",searchTxt.getText().toString().trim());
+                startActivity(searchIntent);
+            }
+        });
 
-        btn.setOnClickListener(new View.OnClickListener(){
+        btnShowBooks.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {

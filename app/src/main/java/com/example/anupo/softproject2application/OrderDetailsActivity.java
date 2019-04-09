@@ -34,7 +34,7 @@ import java.net.URL;
 public class OrderDetailsActivity extends AppCompatActivity {
     public static TextView data;
     public static String data1;
- Button checkout;
+    Button checkout;
     String myString;
 
     @Override
@@ -44,7 +44,8 @@ public class OrderDetailsActivity extends AppCompatActivity {
         data = findViewById(R.id.showBookarea);
         checkout= findViewById(R.id.buttonCheckout);
 
-        myString="Java Standerd";
+        //Get search String form UI Intent
+        myString=getIntent().getStringExtra("search");//"Java Standerd";
         ParseBook pb = new ParseBook();
         pb.execute();
 

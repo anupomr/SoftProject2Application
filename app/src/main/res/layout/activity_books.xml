@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".BooksActivity"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+       <EditText
+           android:id="@+id/searchTxt"
+           android:layout_width="500px"
+           android:layout_height="wrap_content"
+           android:hint="Search text"/>
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"/>
+    </LinearLayout>
     <Button
         android:id="@+id/btn"
         android:layout_width="match_parent"
