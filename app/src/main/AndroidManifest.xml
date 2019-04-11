@@ -26,7 +26,8 @@
         <activity android:name=".PaymentActivity" />
         <activity android:name=".ConfirmationActivity" />
         <activity android:name=".BooksDetailsActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".SellBookActivity"></activity>
     </application>
 
 </manifest>
