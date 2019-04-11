@@ -9,7 +9,7 @@
     </style>
     <style name="headingOne">
         <item name="android:textColor">#f44404</item>
-        <item name="android:textSize">10pt</item>
+        <item name="android:textSize">12pt</item>
         <item name="android:textStyle">bold</item>
 
     </style>
@@ -35,4 +35,11 @@
         <item name="android:layout_marginLeft">10dp</item>
     </style>
 
+
+    <style name="sellStyle">
+        <item name="android:textColor">#063593</item>
+
+        <item name="android:textStyle">bold</item>
+
+    </style>
 </resources>

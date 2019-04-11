@@ -26,5 +26,15 @@
     <string name="expDateFormat">MMYY</string>
     <string name="phoneNo">Phone Number</string>
     <string name="phoneNoFormat">6472142145</string>
+    <string name="please_fill_book_info_to_sell">Please fill Book info to Sell</string>
+    <string name="enter_book_s_title">Enter Book\'s title</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="enter_description_of_books">Enter Description of Books</string>
+    <string name="isbn">ISBN</string>
+    <string name="publisher">Publisher</string>
+    <string name="edition">Edition</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
 
 </resources>
