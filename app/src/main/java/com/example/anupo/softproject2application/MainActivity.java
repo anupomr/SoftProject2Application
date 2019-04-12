@@ -46,11 +46,20 @@ Button loginButton;
                 Toast.makeText(this, "You selected login!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.book:
-                Intent books=new Intent(this,BooksActivity.class);
+                //Get search String form UI Intent
+                String userName=getIntent().getStringExtra("username");//"Java Standerd";
+                if (userName.isEmpty()){
+                    Toast.makeText(this, "Please login!", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                else{
+                Intent books=new Intent(this,SellBookActivity.class);
                 startActivity(books);
-                break;
+                    break;
+                }
+
             case R.id.bookList:
-                Intent booksListIntent=new Intent(this,BooksListActivity.class);
+                Intent booksListIntent=new Intent(this,BooksActivity.class);
                 startActivity(booksListIntent);
 
                 break;
@@ -71,4 +80,5 @@ Button loginButton;
         inflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
 }

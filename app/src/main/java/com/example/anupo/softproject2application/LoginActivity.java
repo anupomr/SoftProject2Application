@@ -1,9 +1,9 @@
 package com.example.anupo.softproject2application;
 /*
  * Purpose: This page for Login
- * Author:  Anupom Roy
+ * Author:  Anupom Roy and Shila das
  * Date: Feburary 20, 2019
- * Version: 2.1
+ * Version: 2.2
  * */
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
+    //To generate the menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
@@ -163,7 +163,9 @@ public class LoginActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+    //Menu End
 
+    // This Async Task connect database though API for Login
     private class HTTPAsyncTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {

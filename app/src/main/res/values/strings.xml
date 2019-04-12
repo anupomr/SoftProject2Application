@@ -26,7 +26,7 @@
     <string name="expDateFormat">MMYY</string>
     <string name="phoneNo">Phone Number</string>
     <string name="phoneNoFormat">6472142145</string>
-    <string name="please_fill_book_info_to_sell">Please fill Book info to Sell</string>
+    <string name="please_fill_book_info_to_sell">Please fill Book info for Sell</string>
     <string name="enter_book_s_title">Enter Book\'s title</string>
     <string name="title">Title</string>
     <string name="description">Description</string>

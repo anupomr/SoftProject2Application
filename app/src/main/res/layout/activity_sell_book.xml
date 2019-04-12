@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+android:background="@drawable/library_books"
 
     tools:context=".SellBookActivity"
     >
@@ -25,17 +26,17 @@
         style="@style/sellStyle"
         android:layout_width="74dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editText"
+        android:layout_alignBaseline="@+id/editTextTitle"
         android:layout_alignEnd="@+id/textView4"
         android:text="@string/title"
         android:textAlignment="textEnd" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText2"
+        android:layout_alignStart="@+id/editTextDesc"
         android:layout_marginTop="103dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -46,13 +47,13 @@
         style="@style/sellStyle"
         android:layout_width="96dp"
         android:layout_height="19dp"
-        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBaseline="@+id/editTextDesc"
         android:layout_alignEnd="@+id/textView2"
         android:text="@string/description"
         android:textAlignment="textEnd" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextDesc"
         android:layout_width="196dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textView"
@@ -75,11 +76,11 @@
         android:textAlignment="textEnd" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextIsbn"
         android:layout_width="191dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignStart="@+id/editText"
+        android:layout_alignStart="@+id/editTextTitle"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Enter ISBN number" />
@@ -95,10 +96,10 @@
         android:textAlignment="textEnd" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editTextPublisher"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText"
+        android:layout_alignStart="@+id/editTextTitle"
         android:layout_centerVertical="true"
         android:ems="10"
         android:inputType="textPersonName"
@@ -116,11 +117,11 @@
         android:textAlignment="textEnd" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextEdition"
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignStart="@+id/editText"
+        android:layout_alignStart="@+id/editTextTitle"
         android:ems="10"
         android:inputType="number" />
 
@@ -136,7 +137,7 @@
         android:textAlignment="textEnd" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/editTextQuantity"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView7"
@@ -157,11 +158,11 @@
         android:textAlignment="textEnd" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/editTextPrice"
         android:layout_width="191dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView8"
-        android:layout_alignStart="@+id/editText"
+        android:layout_alignStart="@+id/editTextTitle"
         android:ems="10"
         android:inputType="numberDecimal" />
 

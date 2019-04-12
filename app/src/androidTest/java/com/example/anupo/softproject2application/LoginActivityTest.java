@@ -1,6 +1,6 @@
 package com.example.anupo.softproject2application;
 /*
- * Purpose: To test Books Activity
+ * Purpose: To test Login Activity
  * Author:  Anupom Roy
  * Date: April 3, 2019
  * Version: 2.1
@@ -23,31 +23,31 @@ import static org.junit.Assert.*;
 public class LoginActivityTest {
 
     @Rule
-    public ActivityTestRule<LoginActivity> mActivityTestRule =new ActivityTestRule<LoginActivity>(LoginActivity.class);
+    public ActivityTestRule<MainActivity> mActivityTestRule =new ActivityTestRule<MainActivity>(MainActivity.class);
 
-    private LoginActivity loginActivity=null;
+    private MainActivity mainActivity =null;
 
-    Instrumentation.ActivityMonitor monitor=getInstrumentation().addMonitor(BooksActivity.class.getName(),null,false);
+    Instrumentation.ActivityMonitor monitor=getInstrumentation().addMonitor(LoginActivity.class.getName(),null,false);
 
     @Before
     public void setUp() throws Exception {
-        loginActivity=mActivityTestRule.getActivity();
+        mainActivity =mActivityTestRule.getActivity();
     }
     @Test
     public void testLunchOfBooksActivity(){
-        assertNotNull(loginActivity.findViewById(R.id.buttonLoginCustomer));
+        assertNotNull(mainActivity.findViewById(R.id.buttonLogin));
 
-//        onView(withId(R.id.buttonLoginCustomer)).perform(click());
-//
-//        Activity booksActivity=getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
-//
-//        assertNotNull(booksActivity);
-//
-//        booksActivity.finish();
+        onView(withId(R.id.buttonLogin)).perform(click());
+
+        Activity loginActivity=getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
+
+        assertNotNull(loginActivity);
+
+        loginActivity.finish();
     }
 
     @After
     public void tearDown() throws Exception {
-        loginActivity=null;
+        mainActivity =null;
     }
 }

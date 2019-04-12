@@ -26,7 +26,7 @@ public class MainActivityTest {
     @Test
     public void testLaunch()
     {
-        View view=mainActivity.findViewById(R.id.buttonLogin);
+        View view=mainActivity.findViewById(R.id.imageView);
         assertNotNull(view);
     }
     @After
