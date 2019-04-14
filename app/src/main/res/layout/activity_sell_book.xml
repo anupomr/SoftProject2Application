@@ -39,8 +39,7 @@ android:background="@drawable/library_books"
         android:layout_alignStart="@+id/editTextDesc"
         android:layout_marginTop="103dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/enter_book_s_title" />
+        android:inputType="textPersonName"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -60,8 +59,7 @@ android:background="@drawable/library_books"
         android:layout_alignParentTop="true"
         android:layout_marginTop="161dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/enter_description_of_books" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView4"
@@ -82,8 +80,7 @@ android:background="@drawable/library_books"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignStart="@+id/editTextTitle"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter ISBN number" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView5"
@@ -102,8 +99,7 @@ android:background="@drawable/library_books"
         android:layout_alignStart="@+id/editTextTitle"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Publisher Number" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView6"
@@ -174,6 +170,7 @@ android:background="@drawable/library_books"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:onClick="onSend"
         android:layout_marginBottom="14dp"
         android:text="Save" />
 </RelativeLayout>

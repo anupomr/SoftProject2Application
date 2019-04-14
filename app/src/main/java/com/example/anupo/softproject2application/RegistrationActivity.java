@@ -1,7 +1,7 @@
 package com.example.anupo.softproject2application;
 /*
  * Purpose: This page for Registration
- * Author:  Anupom Roy
+ * Author:  Anupom Roy and Shila Das
  * Date: Feburary 20, 2019
  * Version: 1.7
  * */
@@ -66,7 +66,7 @@ String res="";
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-           // Log.d("shila",emailET.getText().toString());
+            Log.d("shila",result);
             try {
                 JSONObject jo = new JSONObject(result);
                // Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();

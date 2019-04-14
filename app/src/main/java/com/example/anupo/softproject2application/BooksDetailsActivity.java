@@ -8,6 +8,7 @@ package com.example.anupo.softproject2application;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -30,6 +31,10 @@ public class BooksDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent checkoutIntent=new Intent(BooksDetailsActivity.this, PaymentActivity.class);
+                Log.d("ook detail" ,tvId.getText().toString());
+                Log.d("book detail" ,tvPrice.getText().toString());
+                checkoutIntent.putExtra("bookId",tvId.getText().toString());
+                checkoutIntent.putExtra("price",tvPrice.getText().toString());
                 startActivity(checkoutIntent);
             }
         });
@@ -42,14 +47,17 @@ public class BooksDetailsActivity extends AppCompatActivity {
         tvIsbn=(TextView)findViewById(R.id.tvIsbn);
         tvPublisher=(TextView)findViewById(R.id.tvPublisher);
         img=(ImageView) findViewById(R.id.img_book);
+
         Intent intent=getIntent();
         String bookid=intent.getExtras().getString("bookId");
         tvId.setText(bookid);
         tvTitle.setText(intent.getExtras().getString("title"));
         tvDesc.setText(intent.getExtras().getString("description"));
-        tvPrice.setText(intent.getExtras().getString("price"));
+        tvPrice.setText(String.valueOf(intent.getExtras().getFloat("price")));
 
         img.setImageResource(intent.getExtras().getInt("thumbnail"));
+        Log.d("from book detail c" ,tvId.getText().toString());
+        Log.d("from book detail c" ,tvPrice.getText().toString());
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

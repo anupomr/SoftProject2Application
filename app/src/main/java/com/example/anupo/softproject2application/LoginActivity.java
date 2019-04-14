@@ -200,6 +200,12 @@ public class LoginActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor =
                             getSharedPreferences(CUSTOMER_USERNAME_PREFS, MODE_PRIVATE).edit();
                     editor.putString("username_key",usernameEditText.getText().toString());
+                    editor.putString("UserId",jprofile.getString("uId"));
+                    editor.putString("cc",jprofile.getString("uCreditcard"));
+                    editor.putString("ccname",jprofile.getString("uCreditcardName"));
+                    editor.putString("ph",jprofile.getString("uPhoneNumber"));
+                    editor.putString("address",jprofile.getString("uP"));
+                    editor.putString("email",usernameEditText.getText().toString());
                     editor.apply();
 
                     //view customer activity
