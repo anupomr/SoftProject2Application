@@ -37,6 +37,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
     Button checkout;
     String myString;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent checkoutIntent=new Intent(OrderDetailsActivity.this, PaymentActivity.class);
+
                 startActivity(checkoutIntent);
             }
         });

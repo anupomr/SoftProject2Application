@@ -14,7 +14,7 @@
         android:layout_height="69dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Your Order Details"
+        android:text="Search Details"
         android:padding="5dp"
         android:textSize="24sp" />
 

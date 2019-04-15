@@ -93,14 +93,7 @@ String selectedBookId, selectedBookPrice;
                     return;
                 }
                 new HTTPAsyncTask().execute("http://bookapi-dev.us-east-1.elasticbeanstalk.com/api/Orders");
-             //   Call<ResponseBody> call = RetrofitClient
-               //         .getInstance()
-                 //       .getApi()
-                   //     .createUser(txtCardNo, txtAddress, txtName);
 
-
-              // Intent confitmIntent=new Intent(PaymentActivity.this,ConfirmationActivity.class);
-                //startActivity(confitmIntent);
             }
         });
     }
@@ -120,7 +113,7 @@ String selectedBookId, selectedBookPrice;
             case R.id.home:
                 Intent homeIntent=new Intent(this,MainActivity.class);
                 startActivity(homeIntent);
-                //Toast.makeText(this, "You selected start!", Toast.LENGTH_LONG).show();
+
                 break;
             case R.id.login:
                 Intent loginIntent=new Intent(this,LoginActivity.class);
@@ -130,7 +123,7 @@ String selectedBookId, selectedBookPrice;
             case R.id.book:
                 Intent books=new Intent(this,BooksActivity.class);
                 startActivity(books);
-                //Toast.makeText(this, "You selected book!", Toast.LENGTH_LONG).show();
+
                 break;
             case R.id.bookList:
                 Intent booksListIntent=new Intent(this,BooksListActivity.class);
@@ -175,12 +168,10 @@ String selectedBookId, selectedBookPrice;
             Log.d("shila",result);
             try {
                 JSONObject jo = new JSONObject(result);
-                // Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();
+
                 if(!jo.getString("orderId").isEmpty()) {
                     Intent intent = new Intent(getApplicationContext(),ConfirmationActivity.class);
-                    //intent.putExtra("email",emailET.getText().toString());
-                    //intent.putExtra("pwd",pwdET.getText().toString());
-                    //intent.putExtra("ph",phET.getText().toString());
+
                     startActivity(intent);
                 }
             } catch (JSONException e) {

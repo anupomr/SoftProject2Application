@@ -69,21 +69,18 @@ String res="";
             Log.d("shila",result);
             try {
                 JSONObject jo = new JSONObject(result);
-               // Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();
+
                 if(jo.getString("statusCode").equals("201")) {
                     Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
                     intent.putExtra("email",emailET.getText().toString());
-                    //intent.putExtra("pwd",pwdET.getText().toString());
+
                     intent.putExtra("ph",phET.getText().toString());
                     startActivity(intent);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-           // res=result;
-            //res.setText(result);
-            // return result;
+
         }
         private String HttpPost(String myUrl) throws IOException, JSONException {
             String result = "";
@@ -109,7 +106,6 @@ String res="";
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             String inputLine = "";
             while ((inputLine = br.readLine()) != null) {
-                //sb=inputLine;
                 sb.append(inputLine);
             }
             JsonResult = sb.toString();

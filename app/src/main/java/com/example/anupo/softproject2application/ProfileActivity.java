@@ -36,12 +36,9 @@ public class ProfileActivity extends AppCompatActivity {
         fnET=(EditText)findViewById(R.id.fnET);
         lnET=(EditText)findViewById(R.id.lnET);
         ccET=(EditText)findViewById(R.id.ccET);
-       // emailTV=(TextView) findViewById(R.id.emailTV);
-        //phTV=(TextView) findViewById(R.id.phTV);
-        //emailTV.setText(getIntent().getStringExtra("email"));
+
         email=getIntent().getStringExtra("email");
         Log.d("email",email);
-        //phTV.setText(getIntent().getStringExtra("ph"));
         ph=getIntent().getStringExtra("ph");
         Log.d("shila2",email);
     }
@@ -73,7 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
                 JSONObject jo = new JSONObject(result);
                 // Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();
                 if(jo.getString("statusCode").equals("201")) {
-                    Intent intent = new Intent(getApplicationContext(),BooksActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                     startActivity(intent);
                 }
             } catch (JSONException e) {

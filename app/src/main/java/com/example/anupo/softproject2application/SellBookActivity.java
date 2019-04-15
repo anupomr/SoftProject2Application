@@ -47,11 +47,6 @@ public class SellBookActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
     //Menu start if user change his mind
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -71,7 +66,6 @@ public class SellBookActivity extends AppCompatActivity {
                 Intent books=new Intent(this,SellBookActivity.class);
                 startActivity(books);
                 break;
-
 
             case R.id.bookList:
                 Intent booksListIntent=new Intent(this,BooksActivity.class);
@@ -123,23 +117,14 @@ public class SellBookActivity extends AppCompatActivity {
             Log.d("shila",result);
             try {
                 JSONObject jo = new JSONObject(result);
-                // Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();
                 if(!jo.getString("bookId").isEmpty()) {
                     Intent intent = new Intent(getApplicationContext(),BooksActivity.class);
-                   // intent.putExtra("bookId",jo.getString("bookId"));
-                    //intent.putExtra("title",jo.getString("title"));
-                    //intent.putExtra("description",jo.getString("description"));
-                    //intent.putExtra("price",jo.getString("price"));
-                    //intent.putExtra("thumbnail",R.drawable.b1);
                     startActivity(intent);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-            // res=result;
-            //res.setText(result);
-            // return result;
+
         }
         private String HttpPost(String myUrl) throws IOException, JSONException {
             String result = "";

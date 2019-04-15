@@ -53,8 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     public boolean validate(String username, String password) {
         if(!username.isEmpty() && !password.isEmpty())
         {
-            //return username.equals(password);
-            return true;
+           return true;
         }
         return false;
     }
@@ -63,42 +62,10 @@ public class LoginActivity extends AppCompatActivity {
     public void loginBtn_OnClick(View view) {
         String _username = usernameEditText.getText().toString();
         String _password = passwordEditText.getText().toString();
-        //for inserting book condition
-
 
         if(validate(_username,_password))
         {
             new HTTPAsyncTask().execute("http://bookapi-dev.us-east-1.elasticbeanstalk.com/api/UserWithRoles/login");
-           // Toast.makeText(this
-            //, res, Toast.LENGTH_LONG).show();
-          //  JSONArray jsonArray = null;
-
-           // try {
-               // jsonArray = new JSONArray(res);
-             //   Log.d("sebo","test");
-          //  for (int i = 0; i < jsonArray.length(); i++) {
-              //  JSONObject jsonObject = new JSONObject(res);
-
-            //    Log.d("shila1",String.valueOf(jsonObject.length()));
-              //  Log.d("shila3",String.valueOf(jsonObject));
-            //    Log.d("shila2",String.valueOf(jsonObject.names()));
-             //   Toast.makeText(getApplicationContext(),String.valueOf(jsonObject.names()), Toast.LENGTH_LONG).show();
-              //  Toast.makeText(getApplicationContext(),jsonObject.getString("uEmail"), Toast.LENGTH_LONG).show();
-//                if (jsonObject.getString("title").equals(myString)) {
-//                    singleParsed =
-//                            "Book Name  : " + jsonObject.getString("title") + "\n" +
-//                                    "Price      : " + jsonObject.getString("price") + "\n" +
-//                                    "Edition    : " + jsonObject.getString("edition") + "\n"+
-//                                    "Description: " + jsonObject.getString("description") + "\n"+
-//                                    "ISBN       : " + jsonObject.getString("isbn") + "\n"+
-//                                    "Publisher  : "+ jsonObject.getString("publisher") + "\n";
-//
-//                    dataParsed = dataParsed + singleParsed + "\n\n";
-//                }
-            //}
-            //} catch (JSONException e) {
-              //  e.printStackTrace();
-            //}
 
         }
         else
@@ -184,8 +151,7 @@ public class LoginActivity extends AppCompatActivity {
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-           // Log.d("resStr",result);
-            //usernameEditText.setText(result);
+
            try {
                 JSONObject jo = new JSONObject(result);
                 Toast.makeText(getApplicationContext(), jo.getString("message"), Toast.LENGTH_LONG).show();
@@ -194,9 +160,7 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     JSONObject jprofile=new JSONObject(jo.getString("profile"));
                     Log.d("readData",jprofile.getString("uFirstName"));//way of reading any tag inside profile from response
-                  //  Intent intent = new Intent(getApplicationContext(),BooksActivity.class);
-                    //intent.putExtra("username",usernameEditText.getText().toString());
-                    //startActivity(intent);
+
                     SharedPreferences.Editor editor =
                             getSharedPreferences(CUSTOMER_USERNAME_PREFS, MODE_PRIVATE).edit();
                     editor.putString("username_key",usernameEditText.getText().toString());
@@ -209,7 +173,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.apply();
 
                     //view customer activity
-                    // Toast.makeText(this, "valid", Toast.LENGTH_SHORT).show();
+
                     Intent intent = new Intent(getApplicationContext(),BooksActivity.class);
                     intent.putExtra("username",usernameEditText.getText().toString());
                     startActivity(intent);
@@ -229,11 +193,7 @@ public class LoginActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //Log.d("shila",result);
-            //Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-           // res=result;
-            //res.setText(result);
-           // return result;
+
         }
         private String HttpPost(String myUrl) throws IOException, JSONException {
             String result = "";
